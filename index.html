@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mayor of Bugasong | Official Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+:root{
+    --primary:#8B0000;
+    --secondary:#B22222;
+    --light:#f8f8f8;
+    --white:#ffffff;
+    --dark:#222222;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#333;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:#fff;
+    z-index:999;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+nav{
+    max-width:1400px;
+    margin:auto;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:var(--primary);
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(139,0,0,.75),rgba(139,0,0,.75)),
+    url('https://6a5b209553cbb51f4783b92e.imgix.net/sandbox/mayor.JPG');
+
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:70px;
+}
+
+.hero h3{
+    font-weight:300;
+    margin:15px 0;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    background:white;
+    color:var(--primary);
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:600;
+}
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    color:var(--primary);
+    font-size:40px;
+}
+
+.section-title p{
+    color:#666;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-grid img{
+    width:100%;
+    border-radius:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.stats{
+    background:var(--primary);
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h3{
+    font-size:45px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.project{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.project i{
+    font-size:45px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.news{
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.news img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.news-content{
+    padding:20px;
+}
+
+.advisory{
+    background:var(--primary);
+    color:white;
+}
+
+.advisory-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.advisory-card{
+    background:rgba(255,255,255,.15);
+    padding:25px;
+    border-radius:10px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.transparency-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.transparency-item{
+    background:#f5f5f5;
+    padding:25px;
+    border-left:5px solid var(--primary);
+}
+
+.contact{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+}
+
+footer{
+    background:#650000;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* Lightbox */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:99999;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:white;
+    font-size:50px;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+nav ul{
+    display:none;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">Hon. Victor R. Condez</div>
+
+<ul>
+<li><a href="#about">Mayor</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#advisory">Advisory</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#transparency">Transparency</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Hon. Victor R. Condez</h1>
+<h3>Municipal Mayor of Bugasong Antique</h3>
+<p>
+Delivering Transparent Governance, Sustainable Development,
+and Quality Public Service for Every Bugasongnon.
+</p>
+<!-- <a href="#projects" class="btn">Explore Projects</a> -->
+</div>
+</section>
+
+<section id="about">
+
+<div class="section-title">
+<h2>Mayor's Corner</h2>
+<p>Leadership • Service • Progress</p>
+</div>
+
+<div class="about-grid">
+
+<img src="images/mayor-pic.png" alt="Mayor">
+
+<div class="card">
+
+<h3>Hon. Victor R. Condez</h3>
+
+<p>Welcome to my official website.</p><br>
+<p>As your public servant, I remain committed to transparent governance, sustainable development, and responsive public service. Together, we continue to build a stronger Bugasong through infrastructure modernization, quality education, accessible healthcare, economic growth, and resilient communities.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h3>100+</h3>
+<h2>Infrastructure</h2>
+</div>
+
+<div class="stat">
+<h3>27</h3>
+<h2>Education</h2>
+</div>
+
+<div class="stat">
+<h3>50K+</h3>
+<h2>Health</h2>
+</div>
+
+<div class="stat">
+<h3>15+</h3>
+<h2>Agriculture</h2>
+</div>
+
+<div class="stat">
+<h3>15+</h3>
+<h2>Tourism</h2>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="section-title">
+<h2>Mayor Condez - Digital Ecosystem</h2>
+</div>
+
+<div class="projects-grid">
+
+<div class="project">
+<i class="fas fa-landmark"></i>
+<h3>Official Website of Bugasong</h3>
+<p>Stay informed with the latest government news, programs, and public information.</p>
+</div>
+
+<div class="project">
+<i class="fas fa-hands-helping"></i>
+<h3>Citizen Services</h3>
+<p>Access municipal services, permits, forms, and citizen assistance online.</p>
+</div>
+
+<div class="project">
+<i class="fas fa-network-wired"></i>
+<h3>Digital Barangays</h3>
+<p>Connecting communities through digital solutions for better local governance and public engagement.</p>
+</div>
+
+
+</div>
+
+</section>
+
+<section id="news">
+
+<div class="section-title">
+<h2>Latest News & Updates</h2>
+</div>
+
+<div class="news-grid">
+
+<div class="news">
+<img src="images\Latest News & Updates\1.jpg">
+<div class="news-content">
+<h3>Pagyakap sa Kabarangayan: PuroKalusugan</h3>
+<p>Closing the month of July with unwavering commitment, the Bugasong Primary Care Facility carried on its mission of delivering accessible and people-centered healthcare through the PagYakap sa Kabarangayan: PuroKalusugan outreach in Barangay Sabang West. Despite the challenges brought by the southwest monsoon, health services continued uninterrupted under the leadership of Dr. Donelle Camiña, Doctor to the Barrio (DTTB), at the Barangay Covered Gym.</p> 
+</div>
+</div>
+
+<div class="news">
+<img src="images\Latest News & Updates\2.jpg">
+<div class="news-content">
+<h3>#LARAGWAY: </h3>
+<p>Nagpatigayon kang food redemption ang Walang Gutom Program (WGP) sa banwa kang Bugasong kadiya nga Huwebes, Hulyo 23, sa Bugasong Public Market Gymnasium, sa pagpanguna kang opisina kang Municipal Social Welfare and Development Officer (MSWDO) Lady Love B. Requintina, kaimaw man kang representante kang Department of Social Welfare and Development (DSWD) R6, bilang kabahin kang anda regular nga aktibidades.</p>
+</div>
+</div>
+
+<div class="news">
+<img src="images\Latest News & Updates\3.jpg">
+<div class="news-content">
+<h3>Coordination Meeting with Punong Barangays, Barangay Secretaries, Barangay Treasurers, the Liga ng mga Barangay (LnB), and the Department of the Interior and Local Government (DILG) on July 20, 2026, at the Municipal Conference Hall.</h3>
+<p>The meeting served as a venue to strengthen collaboration between the municipal government, barangay officials, and the DILG in promoting effective local governance and ensuring the efficient implementation of government programs and policies..</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="advisory" id="advisory">
+
+<div class="section-title">
+<h2 style="color:white">Public Advisories</h2>
+</div>
+
+<div class="advisory-grid">
+
+<div class="advisory-card">
+⚠ Weather Advisory
+</div>
+
+<div class="advisory-card">
+⚠ Flood Monitoring
+</div>
+
+<div class="advisory-card">
+⚠ Health Advisory
+</div>
+
+<div class="advisory-card">
+⚠ Traffic Advisory
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="section-title">
+<h2>Community Gallery</h2>
+</div>
+
+<div class="gallery-grid">
+
+<img src="images\Community Gallery\1.jpg">
+<img src="images\Community Gallery\2.jpg">
+<img src="images\Community Gallery\3.jpg">
+<img src="images\Community Gallery\4.jpg">
+<img src="images\Community Gallery\5.jpg">
+<img src="images\Community Gallery\6.jpg">
+<img src="images\Community Gallery\7.jpg">
+<img src="images\Community Gallery\8.jpg">
+<img src="images\Community Gallery\9.jpg">
+<img src="images\Community Gallery\10.jpg">
+
+</div>
+
+</section>
+
+<section id="transparency">
+
+<div class="section-title">
+<h2>Transparency & Governance</h2>
+</div>
+
+<div class="transparency-grid">
+
+<div class="transparency-item">Transparency Seal</div>
+<div class="transparency-item">Citizen's Charter</div>
+<div class="transparency-item">Annual Procurement Plan</div>
+<div class="transparency-item">Financial Reports</div>
+<div class="transparency-item">Bids & Awards</div>
+<div class="transparency-item">Full Disclosure Policy</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact the Mayor's Office</h2>
+
+<p>Municipal Hall, Bugasong, Antique</p>
+<p>Email: mayor@bugasong.gov.ph</p>
+<p>Phone: (036) XXX-XXXX</p>
+
+</section>
+
+<footer>
+© 2026 Municipality of Bugasong | Office of the Municipal Mayor
+</footer>
+
+<div class="modal" id="modal">
+<span class="close">&times;</span>
+<img id="modal-img">
+</div>
+
+<script>
+
+const modal=document.getElementById('modal');
+const modalImg=document.getElementById('modal-img');
+
+document.querySelectorAll('.gallery-grid img').forEach(img=>{
+
+img.onclick=function(){
+
+modal.style.display='flex';
+modalImg.src=this.src;
+
+}
+
+});
+
+document.querySelector('.close').onclick=function(){
+modal.style.display='none';
+}
+
+modal.onclick=function(e){
+
+if(e.target===modal){
+modal.style.display='none';
+}
+
+}
+
+</script>
+
+</body>
+</html>
