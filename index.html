@@ -569,6 +569,57 @@ nav ul{
 
 
 
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:140px;
+    height:100x;
+    object-fit:contain;
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+}
+
+.logo-text h2{
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+    color:#8B0000;
+}
+
+.logo-text .small-text{
+    font-size:12px;
+    color:#555;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:600;
+}
+
+@media (max-width:768px){
+
+    .logo img{
+        width:65px;
+        height:65px;
+    }
+
+    .logo-text h2{
+        font-size:16px;
+    }
+
+    .logo-text .small-text{
+        font-size:10px;
+    }
+
+}
+
+
 </style>
 </head>
 
@@ -576,7 +627,18 @@ nav ul{
 
 <header>
 <nav>
-<div class="logo">Hon. Victor R. Condez</div>
+
+
+
+<div class="logo">
+    <img src="images/logoMayor.png" alt="Municipality of Bugasong Logo">
+    <div class="logo-text">
+        
+        <h2>Hon. Victor R. Condez</h2>
+        <span class="small-text">Office of the Municipal Mayor</span>
+    </div>
+</div>
+
 
 <ul>
 <li><a href="#about">Mayor</a></li>
@@ -592,7 +654,7 @@ nav ul{
 <section class="hero">
 <div>
 <h1>Hon. Victor R. Condez</h1>
-<h3>Office of the Municipal Mayor – Official Website</h3>
+
 <p>
 Delivering Transparent Governance, Sustainable Development,
 and Quality Public Service for Every Bugasongnon.
